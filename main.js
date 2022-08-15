@@ -16,13 +16,11 @@ const weather = {
         const { name } = data;
         const { description }= data.weather[0];
         const { temp, humidity } = data.main;
-        const { speed } = data.wind;
         // acutally displays info
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°F";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind speed: " + speed + " mph";
         // if searching for location's weather, removes hidden visibility styling
         document.querySelector(".weather").classList.remove("loading");
         document.body.style.backgroundImage = "url(https://source.unsplash.com/1920x1080/?" + name + ")"
