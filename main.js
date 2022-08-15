@@ -15,12 +15,14 @@ const weather = {
         // and pulls info to display
         const { name } = data;
         const { description }= data.weather[0];
-        const { temp, humidity } = data.main;
+        const { temp, humidity, temp_min, temp_max } = data.main;
         // acutally displays info
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°F";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".temp_min").innerText = "Min: " + temp_min + "°F";
+        document.querySelector(".temp_max").innerText = "Max: " + temp_max + "°F";
         // if searching for location's weather, removes hidden visibility styling
         document.querySelector(".weather").classList.remove("loading");
         document.body.style.backgroundImage = "url(https://source.unsplash.com/1920x1080/?" + name + ")"
